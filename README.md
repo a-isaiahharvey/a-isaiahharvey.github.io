@@ -1,4 +1,4 @@
-[![pages-build-deployment](https://github.com/a-isaiahharvey/a-isaiahharvey.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/a-isaiahharvey/a-isaiahharvey.github.com/actions/workflows/pages/pages-build-deployment)
+[![Publish GitHub Pages](https://github.com/a-isaiahharvey/a-isaiahharvey.github.io/actions/workflows/publish_gh_pages.yml/badge.svg)](https://github.com/a-isaiahharvey/a-isaiahharvey.github.io/actions/workflows/publish_gh_pages.yml)
 
 ## [Allister Isaiah Harvey Portfolio](https://a-isaiahharvey.github.io)
 
