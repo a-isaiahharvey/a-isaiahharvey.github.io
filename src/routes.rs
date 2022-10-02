@@ -1,6 +1,6 @@
 use yew::{html, Html};
 
-use crate::components::{layout};
+use crate::components::layout;
 
 pub fn home_page() -> Html {
     layout(html! {})
@@ -33,7 +33,7 @@ pub fn contact_page() -> Html {
                     </svg>
                   </div>
                 </div>
-                <h3 class="text-slate-500 dark:text-slate-400 mb-3 text-xl font-bold font-heading leading-snug">{"Send Email"}</h3>
+                <h3 class="text-slate-500 dark:text-slate-400 mb-3 text-xl font-bold font-heading leading-snug">{"Email"}</h3>
                 <p class="text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{"a.i.harvey@icloud.com"}</p>
               </div>
             </div>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-  <link data-trunk rel="css" href="dist/css/main.css"/>
-  <link data-trunk rel="copy-file" href="static/404.html"/>
+  <link data-trunk rel="css" href="dist/css/main.css" />
+  <link data-trunk rel="copy-file" href="static/404.html" />
   <title>Allister Isaiah Harvey</title>
 </head>
-<body>
+
+<body class="bg-white border-slate-100 dark:bg-slate-800 dark:border-slate-500">
   <!-- Start Single Page Apps for GitHub Pages -->
   <script type="text/javascript">
     // Single Page Apps for GitHub Pages
@@ -20,17 +22,18 @@
     // When the single page app is loaded further down in this file,
     // the correct url will be waiting in the browser's history for
     // the single page app to route accordingly.
-    (function(l) {
-      if (l.search[1] === '/' ) {
-        var decoded = l.search.slice(1).split('&').map(function(s) {
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
           return s.replace(/~and~/g, '&')
         }).join('?');
         window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+          l.pathname.slice(0, -1) + decoded + l.hash
         );
       }
     }(window.location))
   </script>
   <!-- End Single Page Apps for GitHub Pages -->
 </body>
+
 </html>
