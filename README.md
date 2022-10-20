@@ -1,6 +1,6 @@
 [![Publish GitHub Pages](https://github.com/a-isaiahharvey/a-isaiahharvey.github.io/actions/workflows/publish_gh_pages.yml/badge.svg)](https://github.com/a-isaiahharvey/a-isaiahharvey.github.io/actions/workflows/publish_gh_pages.yml)
 
-## [Allister Isaiah Harvey Portfolio](https://a-isaiahharvey.github.io)
+## [Allister Isaiah Harvey's Website](https://a-isaiahharvey.github.io)
 
 > Personal website of Allister Isaiah Harvey
 
