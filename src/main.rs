@@ -9,6 +9,8 @@ use yew_router::prelude::*;
 enum RootRoute {
     #[at("/")]
     Home,
+    #[at("/donate")]
+    Donate,
     #[at("/about")]
     About,
     #[at("/contact")]
@@ -21,6 +23,7 @@ enum RootRoute {
 fn switch(routes: RootRoute) -> Html {
     match routes {
         RootRoute::Home => routes::home_page(),
+        RootRoute::Donate => routes::donate_page(),
         RootRoute::About => routes::about_page(),
         RootRoute::NotFound => html! { <p>{ "Not Found" }</p> },
         RootRoute::Contact => routes::contact_page(),
