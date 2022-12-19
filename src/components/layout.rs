@@ -1,5 +1,7 @@
 use yew::prelude::*;
 
+use crate::components::SnowContainer;
+
 use super::NavMenu;
 
 #[derive(PartialEq, Properties)]
@@ -18,6 +20,7 @@ pub fn Layout(props: &Props) -> Html {
                     { children.clone() }
                 </main>
             </div>
+            <SnowContainer/>
         </>
     }
 }
