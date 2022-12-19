@@ -1,3 +1,4 @@
+use stylist::css;
 use yew::{classes, html, Component, Context, Html};
 
 pub enum Msg {
@@ -58,8 +59,16 @@ impl Component for NavMenu {
                 .callback(move |_| if flag { Msg::Close } else { Msg::Open })
         };
 
+        let glassmorphism = css!(
+            r"
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        "
+        );
+
         html! {
-            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+            <nav class={classes!("bg-white",  "border-gray-200", "px-2", "sm:px-4", "py-2.5", "dark:bg-gray-900", glassmorphism.clone())}>
                 <div class="container flex flex-wrap justify-between items-center mx-auto">
                     <a href="/" class="flex items-center md:text-xl font-bold">
                         <span class="text-slate-500 dark:text-slate-400">{"Allister I. Harvey"}</span>
@@ -69,7 +78,7 @@ impl Component for NavMenu {
                         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class={format!("{}w-full md:block md:w-auto", if !self.is_open { "hidden "} else { "" })} id="navbar-default">
-                        <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul class={classes!("flex","flex-col","p-4","mt-4","bg-gray-50","rounded-lg","border","border-gray-100","md:flex-row","md:space-x-8","md:mt-0","md:text-sm","md:font-medium","md:border-0","md:bg-white","dark:bg-gray-800","md:dark:bg-gray-900","dark:border-gray-700", glassmorphism)}>
                         {
                             LINK_ITEMS.iter().map(|item| {
                                 html! {

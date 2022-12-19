@@ -40,8 +40,9 @@ impl Component for SnowContainer {
     fn view(&self, _: &yew::Context<Self>) -> yew::Html {
         let style = style!(
             r"
+            z-index: -1;
             height: 100vh;
-            overflow: hidden;
+            overflow: auto;
             position: absolute;
             top: 0;
             transition: opacity 500ms;
