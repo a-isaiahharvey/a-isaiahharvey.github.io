@@ -105,7 +105,7 @@ impl Component for SnowContainer {
                 for _ in (0..num).rev() {
                     let snow = document()
                         .create_element("div")
-                        .unwrap()
+                        .expect("Unable to create snow `div`")
                         .dyn_into::<HtmlElement>()
                         .expect("Could not create snow html element");
                     snow.set_class_name("snow");
@@ -113,7 +113,7 @@ impl Component for SnowContainer {
                     snow.set_inner_html(snow_content[self.random.gen_range(0..2)]);
                     snow_container
                         .append_with_node_1(&snow.get_root_node())
-                        .unwrap();
+                        .expect("Could not append `snow`");
                 }
             };
 

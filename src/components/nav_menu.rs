@@ -1,12 +1,46 @@
-use yew::{html, Component, Context, Html};
+use yew::{classes, html, Component, Context, Html};
 
 pub enum Msg {
     Open,
     Close,
 }
 
+struct LinkItem {
+    text: &'static str,
+    link: &'static str,
+}
+
+const LINK_ITEMS: &[LinkItem] = &[
+    LinkItem {
+        text: "Donate",
+        link: "/donate",
+    },
+    LinkItem {
+        text: "About",
+        link: "/about",
+    },
+    LinkItem {
+        text: "Contact",
+        link: "/contact",
+    },
+    LinkItem {
+        text: "Blog",
+        link: "https://medium.com/@allisterharvey",
+    },
+];
+
 pub struct NavMenu {
     is_open: bool,
+}
+
+impl NavMenu {
+    fn nav_menu_item_component(item: &LinkItem) -> Html {
+        html! {
+            <li>
+                <a href={item.link} class={classes!["block", "py-2", "pr-4", "pl-3", "text-gray-700", "md:text-base", "rounded", "hover:bg-gray-100", "md:hover:bg-transparent", "md:border-0", "md:hover:text-blue-700", "md:p-0", "dark:text-gray-400", "md:dark:hover:text-white", "dark:hover:bg-gray-700", "dark:hover:text-white", "md:dark:hover:bg-transparent"]}>{item.text}</a>
+            </li>
+        }
+    }
 }
 
 impl Component for NavMenu {
@@ -36,18 +70,14 @@ impl Component for NavMenu {
                     </button>
                     <div class={format!("{}w-full md:block md:w-auto", if !self.is_open { "hidden "} else { "" })} id="navbar-default">
                         <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                            <li>
-                                <a href="/donate" class="block py-2 pr-4 pl-3 text-gray-700 md:text-base rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{"Donate"}</a>
-                            </li>
-                            <li>
-                                <a href="/about" class="block py-2 pr-4 pl-3 text-gray-700 md:text-base rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{"About"}</a>
-                            </li>
-                            <li>
-                                <a href="/contact" class="block py-2 pr-4 pl-3 text-gray-700 md:text-base rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{"Contact"}</a>
-                            </li>
-                            <li>
-                                <a href="https://medium.com/@allisterharvey" class="block py-2 pr-4 pl-3 text-gray-700 md:text-base rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{"Blog"}</a>
-                            </li>
+                        {
+                            LINK_ITEMS.iter().map(|item| {
+                                html! {
+                                    Self::nav_menu_item_component(item)
+                                }
+                            }).collect::<Html>()
+
+                        }
                         </ul>
                     </div>
                 </div>

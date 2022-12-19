@@ -22,11 +22,11 @@ enum RootRoute {
 
 fn switch(routes: RootRoute) -> Html {
     match routes {
-        RootRoute::Home => routes::home_page(),
-        RootRoute::Donate => routes::donate_page(),
-        RootRoute::About => routes::about_page(),
+        RootRoute::Home => routes::home::page(),
+        RootRoute::Donate => routes::donate::page(),
+        RootRoute::About => routes::about::page(),
         RootRoute::NotFound => html! { <p>{ "Not Found" }</p> },
-        RootRoute::Contact => routes::contact_page(),
+        RootRoute::Contact => routes::contact::page(),
     }
 }
 
