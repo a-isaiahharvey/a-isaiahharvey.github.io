@@ -20,7 +20,6 @@ pub fn Layout(props: &Props) -> Html {
                     { children.clone() }
                 </main>
             </div>
-            <SnowContainer/>
         </>
     }
 }
